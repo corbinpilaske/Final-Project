@@ -297,3 +297,16 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+README.md
+*.csproj
+Final-Project/Final-Project/App.config
+Final-Project/Final-Project/Form1.Designer.cs
+Final-Project/Final-Project/Form1.resx
+Final-Project/Final-Project/Form1.cs
+Final-Project/Final-Project.sln
+Final-Project/Final-Project/Program.cs
+Final-Project/Final-Project/Properties/AssemblyInfo.cs
+Final-Project/Final-Project/Properties/Resources.Designer.cs
+Final-Project/Final-Project/Properties/Resources.resx
+Final-Project/Final-Project/Properties/Settings.Designer.cs
+Final-Project/Final-Project/Properties/Settings.settings
