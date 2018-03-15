@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class PartsFrm : Form
+    public partial class Parts : Form
     {
-        public PartsFrm()
+        public Parts()
         {
             InitializeComponent();
         }
@@ -21,14 +21,14 @@ namespace Final_Project
         {
             this.Validate();
             this.partsBindingSource.EndEdit();
-
+            this.tableAdapterManager.UpdateAll(this.customersDataSet1);
 
         }
 
-        private void PartsFrm_Load(object sender, EventArgs e)
+        private void Parts_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'partsDataSet.Parts' table. You can move, or remove it, as needed.
-
+            // TODO: This line of code loads data into the 'customersDataSet1.Parts' table. You can move, or remove it, as needed.
+            this.partsTableAdapter.Fill(this.customersDataSet1.Parts);
 
         }
     }

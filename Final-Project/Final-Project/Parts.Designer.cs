@@ -1,6 +1,6 @@
 ﻿namespace Final_Project
 {
-    partial class PartsFrm
+    partial class Parts
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartsFrm));
-            this.partsDataSet = new Final_Project.PartsDataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parts));
+            this.customersDataSet1 = new Final_Project.CustomersDataSet1();
             this.partsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.partsTableAdapter = new Final_Project.CustomersDataSet1TableAdapters.PartsTableAdapter();
+            this.tableAdapterManager = new Final_Project.CustomersDataSet1TableAdapters.TableAdapterManager();
             this.partsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -51,24 +53,37 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.PartsFrmExitbtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.partsDataSet)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsBindingNavigator)).BeginInit();
             this.partsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // partsDataSet
+            // customersDataSet1
             // 
-            this.partsDataSet.DataSetName = "PartsDataSet";
-            this.partsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.customersDataSet1.DataSetName = "CustomersDataSet1";
+            this.customersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // partsBindingSource
             // 
             this.partsBindingSource.DataMember = "Parts";
-            this.partsBindingSource.DataSource = this.partsDataSet;
+            this.partsBindingSource.DataSource = this.customersDataSet1;
+            // 
+            // partsTableAdapter
+            // 
+            this.partsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.PartsTableAdapter = this.partsTableAdapter;
+            this.tableAdapterManager.TableTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Final_Project.CustomersDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VehicleTableAdapter = null;
             // 
             // partsBindingNavigator
             // 
@@ -90,7 +105,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.partsBindingNavigatorSaveItem});
-            this.partsBindingNavigator.Location = new System.Drawing.Point(157, 36);
+            this.partsBindingNavigator.Location = new System.Drawing.Point(12, 48);
             this.partsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.partsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.partsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -136,14 +151,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -151,7 +166,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -160,13 +175,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -183,7 +198,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // partsBindingNavigatorSaveItem
@@ -191,7 +206,7 @@
             this.partsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.partsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("partsBindingNavigatorSaveItem.Image")));
             this.partsBindingNavigatorSaveItem.Name = "partsBindingNavigatorSaveItem";
-            this.partsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.partsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.partsBindingNavigatorSaveItem.Text = "Save Data";
             this.partsBindingNavigatorSaveItem.Click += new System.EventHandler(this.partsBindingNavigatorSaveItem_Click);
             // 
@@ -204,42 +219,49 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.partsDataGridView.DataSource = this.partsBindingSource;
-            this.partsDataGridView.Location = new System.Drawing.Point(34, 64);
+            this.partsDataGridView.Location = new System.Drawing.Point(12, 76);
             this.partsDataGridView.Name = "partsDataGridView";
-            this.partsDataGridView.Size = new System.Drawing.Size(543, 296);
+            this.partsDataGridView.Size = new System.Drawing.Size(646, 301);
             this.partsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Part";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Part";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PartID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PartID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "In Stock";
-            this.dataGridViewTextBoxColumn2.HeaderText = "In Stock";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Part Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Part Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "On Order";
-            this.dataGridViewTextBoxColumn3.HeaderText = "On Order";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cost";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cost";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cost";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cost";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "In Stock";
+            this.dataGridViewTextBoxColumn4.HeaderText = "In Stock";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Vehicle";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Vehicle";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "On Order";
+            this.dataGridViewTextBoxColumn5.HeaderText = "On Order";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Vehicles";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Vehicles";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // label1
             // 
@@ -251,30 +273,30 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Parts";
             // 
-            // PartsFrmExitbtn
+            // button1
             // 
-            this.PartsFrmExitbtn.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PartsFrmExitbtn.Location = new System.Drawing.Point(519, 403);
-            this.PartsFrmExitbtn.Name = "PartsFrmExitbtn";
-            this.PartsFrmExitbtn.Size = new System.Drawing.Size(75, 23);
-            this.PartsFrmExitbtn.TabIndex = 3;
-            this.PartsFrmExitbtn.Text = "Close";
-            this.PartsFrmExitbtn.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(681, 475);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // PartsFrm
+            // Parts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(606, 438);
-            this.Controls.Add(this.PartsFrmExitbtn);
+            this.ClientSize = new System.Drawing.Size(768, 510);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.partsDataGridView);
             this.Controls.Add(this.partsBindingNavigator);
-            this.Name = "PartsFrm";
+            this.Name = "Parts";
             this.Text = "Parts";
-            this.Load += new System.EventHandler(this.PartsFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.partsDataSet)).EndInit();
+            this.Load += new System.EventHandler(this.Parts_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsBindingNavigator)).EndInit();
             this.partsBindingNavigator.ResumeLayout(false);
@@ -287,8 +309,10 @@
 
         #endregion
 
-        private PartsDataSet partsDataSet;
+        private CustomersDataSet1 customersDataSet1;
         private System.Windows.Forms.BindingSource partsBindingSource;
+        private CustomersDataSet1TableAdapters.PartsTableAdapter partsTableAdapter;
+        private CustomersDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator partsBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -308,7 +332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button PartsFrmExitbtn;
+        private System.Windows.Forms.Button button1;
     }
 }
