@@ -68,6 +68,7 @@
             this.lblInvoices.Size = new System.Drawing.Size(71, 18);
             this.lblInvoices.TabIndex = 8;
             this.lblInvoices.Text = "Invoices";
+            this.lblInvoices.Click += new System.EventHandler(this.lblInvoices_Click);
             // 
             // lblVehicle
             // 

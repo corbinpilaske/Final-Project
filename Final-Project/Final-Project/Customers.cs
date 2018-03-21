@@ -34,7 +34,14 @@ namespace Final_Project
 
         private void CustExitbtn_Click(object sender, EventArgs e)
         {
+            // Closes the Customers form
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.tableTableAdapter.CustNameSearch(
+                this.customersDataSet1.Table, searchTextBox.Text);
         }
     }
 }

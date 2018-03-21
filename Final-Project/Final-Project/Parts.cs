@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class Parts : Form
+    public partial class PartsFrm : Form
     {
-        public Parts()
+        public PartsFrm()
         {
             InitializeComponent();
         }
@@ -30,6 +30,19 @@ namespace Final_Project
             // TODO: This line of code loads data into the 'customersDataSet1.Parts' table. You can move, or remove it, as needed.
             this.partsTableAdapter.Fill(this.customersDataSet1.Parts);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Closes the Parts form
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Searches for Part
+            this.partsTableAdapter.GetPartName(
+                this.customersDataSet1.Parts, textBoxParts.Text);
         }
     }
 }

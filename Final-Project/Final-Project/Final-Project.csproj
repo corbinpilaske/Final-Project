@@ -83,6 +83,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomersDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CustomersDataSet1.cs">
+      <DependentUpon>CustomersDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CustomersDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +96,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices.Designer.cs">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoicesData.Designer.cs">
+      <DependentUpon>InvoicesData.cs</DependentUpon>
     </Compile>
     <Compile Include="Parts.cs">
       <SubType>Form</SubType>
@@ -136,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicesData.resx">
+      <DependentUpon>InvoicesData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Parts.resx">
       <DependentUpon>Parts.cs</DependentUpon>

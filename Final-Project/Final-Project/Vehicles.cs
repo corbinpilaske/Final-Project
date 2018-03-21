@@ -31,5 +31,18 @@ namespace Final_Project
             this.vehicleTableAdapter.Fill(this.customersDataSet1.Vehicle);
 
         }
+
+        private void btnVehExit_Click(object sender, EventArgs e)
+        {
+            // Closes the Vehicles form
+            this.Close();
+        }
+
+        private void btnVehSearch_Click(object sender, EventArgs e)
+        {
+            // Searches by Model
+            this.vehicleTableAdapter.ModelSearch(
+                this.customersDataSet1.Vehicle, txtVehicleSearch.Text);
+        }
     }
 }
